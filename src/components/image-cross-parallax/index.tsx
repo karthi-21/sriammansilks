@@ -9,21 +9,12 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import SparklesCore from "./sparkles";
-import { TextGenerateEffect } from "./text-generate-effect";
+import { TImage, chudidhars, sarees, shirts } from "./data";
 
-export const HeroParallax = ({
-  products,
-}: {
-  products: {
-    title: string;
-    link?: string;
-    thumbnail: string;
-  }[];
-}) => {
-  const firstRow = products.slice(0, 5);
-  const secondRow = products.slice(5, 10);
-  const thirdRow = products.slice(10, 15);
+const HeroParallax = () => {
+  const firstRow = sarees;
+  const secondRow = chudidhars;
+  const thirdRow = shirts;
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -59,7 +50,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[300vh] overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -103,53 +94,26 @@ export const HeroParallax = ({
   );
 };
 
-export const Header = () => {
+const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0">
-      <div className="h-fit w-fit relative flex flex-col items-center justify-center overflow-hidden rounded-md">
-        <h1 className="md:text-4xl text-2xl lg:text-7xl font-bold text-center text-gray-800 dark:text-white relative z-20 text-shadow-primary dark:text-shadow-glow-primary">
-          Sri Amman Silks <br />
-          and Traders
-        </h1>
-        <div className="w-full h-20 relative">
-          {/* Gradients */}
-          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-primary to-transparent h-[2px] w-3/4 blur-sm" />
-          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-primary to-transparent h-px w-3/4" />
-          <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-tertiary to-transparent h-[2px] w-1/4 blur-sm" />
-          <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-tertiary to-transparent h-px w-1/4" />
-
-          {/* Core component */}
-          <SparklesCore
-            background="transparent"
-            minSize={0.4}
-            maxSize={1}
-            particleDensity={1200}
-            className="w-full h-full"
-            particleColor="#FFFFFF"
-          />
-
-          {/* Radial Gradient to prevent sharp edges */}
-          <div className="absolute inset-0 w-full h-full bg-neutral-50 dark:bg-neutral-950 [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
-        </div>
-      </div>
-      {/* <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200"></p> */}
-      <TextGenerateEffect
-        words={`Discover the Essence of Style and Quality at Our Textile Haven. Since 2010, We've Been Crafting a World of Trusted Brands and Authentic Fabrics. Experience the Blend of Tradition and Trend with Every Fabric Choice. Where Your Textile Dreams Meet Our Commitment to Excellence.`}
-        className="max-w-2xl text-base font-medium md:text-md mt-4 z-30 text-black dark:text-neutral-200 rounded-xl p-4"
-      />
+    <div className="my-40 max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
+      <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
+        The Ultimate <br /> development studio
+      </h1>
+      <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
+        We build beautiful products with the latest technologies and frameworks.
+        We are a team of passionate developers and designers that love to build
+        amazing products.
+      </p>
     </div>
   );
 };
 
-export const ProductCard = ({
+const ProductCard = ({
   product,
   translate,
 }: {
-  product: {
-    title: string;
-    link?: string;
-    thumbnail: string;
-  };
+  product: TImage;
   translate: MotionValue<number>;
 }) => {
   return (
@@ -161,7 +125,7 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-96 w-[30rem] relative flex-shrink-0"
+      className="group/product h-60 w-52 relative flex-shrink-0"
     >
       {product?.link ? (
         <Link
@@ -169,21 +133,21 @@ export const ProductCard = ({
           className="block group-hover/product:shadow-2xl "
         >
           <Image
-            src={product.thumbnail}
+            src={product?.url ?? "/" + product.assetPath}
             height="600"
             width="600"
             className="object-cover object-left-top absolute h-full w-full inset-0"
-            alt={product.title}
+            alt={product?.title ?? "image-alt"}
           />
         </Link>
       ) : (
         <div className="block group-hover/product:shadow-2xl ">
           <Image
-            src={product.thumbnail}
+            src={product?.url ?? "/" + product.assetPath}
             height="600"
             width="600"
             className="object-cover object-left-top absolute h-full w-full inset-0"
-            alt={product.title}
+            alt={product?.title ?? "image-alt"}
           />
         </div>
       )}
@@ -195,3 +159,5 @@ export const ProductCard = ({
     </motion.div>
   );
 };
+
+export default HeroParallax;

@@ -103,7 +103,7 @@ const Header = () => {
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
         Discover the Essence of Style and Quality at Our Textile Haven. Since
-        2010, We've Been Crafting a World of Trusted Brands and Authentic
+        2010, We&apos;ve Been Crafting a World of Trusted Brands and Authentic
         Fabrics. Experience the Blend of Tradition and Trend with Every Fabric
         Choice. Where Your Textile Dreams Meet Our Commitment to Excellence.
       </p>

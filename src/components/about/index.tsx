@@ -38,13 +38,13 @@ const About = () => {
           About Us
         </h2>
         <p className="text-center text-lg">
-          Since our beginning in 2010, we've grown to understand your needs
+          Since our beginning in 2010, we&apos;ve grown to understand your needs
           better, constantly strengthening our commitment to bring you
           authentic, high-quality products. At our core, we believe in value,
-          quality, and the power of brands. That's why we offer a wide range of
-          trusted brands, and we're always adding more of your favorites. Our
-          dedication to providing only the best never wavers. Welcome to a
-          shopping experience where quality meets trust.
+          quality, and the power of brands. That&apos;s why we offer a wide
+          range of trusted brands, and we&apos;re always adding more of your
+          favorites. Our dedication to providing only the best never wavers.
+          Welcome to a shopping experience where quality meets trust.
         </p>
         <div className="mt-10">
           <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">

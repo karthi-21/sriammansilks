@@ -48,7 +48,8 @@ const HeroParallax = () => {
     springConfig
   );
   return (
-    <div
+    <section
+      id="collections"
       ref={ref}
       className="h-[300vh] overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
@@ -90,7 +91,7 @@ const HeroParallax = () => {
           ))}
         </motion.div>
       </motion.div>
-    </div>
+    </section>
   );
 };
 

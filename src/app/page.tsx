@@ -1,4 +1,5 @@
 import About from "@/components/about";
+import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 import { FloatingNav } from "@/components/header/floating-navbar";
 import HeroSection from "@/components/hero-section";
@@ -21,13 +22,6 @@ export default function Home() {
       name: "Collections",
       link: "#collections",
     },
-    // {
-    //   name: "Contact",
-    //   link: "#contact",
-    //   icon: (
-    //     <ChatBubbleIcon className="h-4 w-4 text-neutral-500 dark:text-white" />
-    //   ),
-    // },
   ];
   return (
     <main className="flex min-h-screen max-w-screen flex-col items-center justify-between gap-24 overflow-x-hidden">
@@ -35,6 +29,7 @@ export default function Home() {
       <HeroSection />
       <About />
       <HeroParallax />
+      <Contact />
       <Footer />
     </main>
   );

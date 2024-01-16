@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <section id="contact" className="w-full container">
       <div className="flex flex-col items-center gap-24 pb-24">
-        <h2 className="w-fit text-xl xl:text-2xl pb-4 font-bold border-b-2 border-primary">
+        <h2 className="w-fit text-xl xl:text-2xl pb-4 font-bold border-b-2 border-primary text-center text-nowrap">
           Contact Us
         </h2>
         <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">

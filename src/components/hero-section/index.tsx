@@ -71,10 +71,12 @@ const HeroSection = () => {
   };
 
   return (
-    <ParallaxBanner
-      layers={[background, foreground, headline, gradientOverlay]}
-      className="aspect-[0.45/1] md:aspect-[0.75/1] 2xl:aspect-[1.95/1] xl:aspect-[1.3/1] 3xl:aspect-[1.8/1] bg-[#7b5225]"
-    />
+    <section id="header" className="w-full">
+      <ParallaxBanner
+        layers={[background, foreground, headline, gradientOverlay]}
+        className="aspect-[0.45/1] md:aspect-[0.75/1] 2xl:aspect-[1.95/1] xl:aspect-[1.3/1] 3xl:aspect-[1.8/1] bg-[#7b5225]"
+      />
+    </section>
   );
 };
 

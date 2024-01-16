@@ -98,12 +98,13 @@ const Header = () => {
   return (
     <div className="my-40 max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
       <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-        The Ultimate <br /> development studio
+        The Ultimate <br /> collection
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-        We build beautiful products with the latest technologies and frameworks.
-        We are a team of passionate developers and designers that love to build
-        amazing products.
+        Discover the Essence of Style and Quality at Our Textile Haven. Since
+        2010, We've Been Crafting a World of Trusted Brands and Authentic
+        Fabrics. Experience the Blend of Tradition and Trend with Every Fabric
+        Choice. Where Your Textile Dreams Meet Our Commitment to Excellence.
       </p>
     </div>
   );

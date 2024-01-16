@@ -1,10 +1,9 @@
 import { BentoGridThirdDemo } from "@/components/bento-grid";
 import Footer from "@/components/footer";
 import { FloatingNav } from "@/components/header/floating-navbar";
-import Navbar from "@/components/header/navbar";
-import { ImagesSliderSection } from "@/components/image-slider";
-import { ParallaxSection } from "@/components/parallax-section";
-import { HomeIcon, AvatarIcon, ChatBubbleIcon } from "@radix-ui/react-icons";
+import HeroSection from "@/components/hero-section";
+import HeroParallax from "@/components/image-cross-parallax";
+import { AvatarIcon, ChatBubbleIcon, HomeIcon } from "@radix-ui/react-icons";
 
 export default function Home() {
   const navItems = [
@@ -27,10 +26,10 @@ export default function Home() {
     },
   ];
   return (
-    <main className="flex min-h-screen max-w-screen flex-col items-center justify-between gap-24">
-      {/* <Navbar /> */}
+    <main className="flex min-h-screen max-w-screen flex-col items-center justify-between gap-24 overflow-x-hidden">
       <FloatingNav navItems={navItems} />
-      <ParallaxSection />
+      <HeroSection />
+      <HeroParallax />
       <BentoGridThirdDemo />
       <Footer />
     </main>

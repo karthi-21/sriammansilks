@@ -20,6 +20,9 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        "3xl": "1980px",
+      },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },

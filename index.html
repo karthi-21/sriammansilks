@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sri Amman Silks and Traders — Minnampalli, Salem</title>
+  <meta name="description" content="Sri Amman Silks and Traders — your trusted family textile shop in Minnampalli, Salem since 2010. Quality sarees, shirts, chudidhars and more from top brands at honest prices." />
+  <meta name="keywords" content="Sri Amman Silks, textile shop Salem, sarees Minnampalli, shirts Salem, chudidhars, Ramraj, Jockey, Poomer, branded clothing Salem" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sri Amman Silks and Traders" />
+  <meta property="og:description" content="Trusted family textile shop in Minnampalli, Salem since 2010." />
+  <meta property="og:image" content="assets/logo.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sriammansilks.com" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold:           '#C9A84C',
+            'gold-light':   '#E8D5A3',
+            'gold-dark':    '#9A7A2E',
+            maroon:         '#6B0F1A',
+            'maroon-dark':  '#4A0A12',
+            'maroon-light': '#9B2335',
+            cream:          '#FAF7F2',
+            'cream-dark':   '#F0EAE0',
+            'cream-border': '#E4D9C8',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans:  ['"Inter"', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+
+    /* Brand title — Playfair Display Bold */
+    .brand-title {
+      font-family: 'Playfair Display', serif;
+      font-optical-sizing: auto;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    /* Kolam-inspired decorative divider */
+    .divider-kolam { display: flex; align-items: center; gap: 1rem; }
+    .divider-kolam::before,
+    .divider-kolam::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #C9A84C, transparent);
+    }
+
+    /* Gold shimmer on hover */
+    .gold-shimmer { position: relative; overflow: hidden; }
+    .gold-shimmer::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 30%, rgba(201,168,76,0.15) 50%, transparent 70%);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+    .gold-shimmer:hover::after { transform: translateX(100%); }
+
+    /* Product card hover */
+    .product-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(107,15,26,0.12);
+    }
+
+    /* Hero overlay */
+    .hero-overlay {
+      background: linear-gradient(to bottom,
+        rgba(74,10,18,0.7) 100%,
+        rgba(107,15,26,0.5) 40%,
+        rgba(107,15,26,0.85) 100%
+      );
+    }
+
+    /* Navbar scroll effect */
+    .nav-scrolled { box-shadow: 0 4px 20px rgba(74,10,18,0.3); }
+
+    /* Fade-in on scroll */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Infinite scroll marquee for brands */
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      animation: marquee 25s linear infinite;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+
+<body class="bg-cream text-stone-800 antialiased">
+
+  <!-- ══════════════════════════════════════════
+       NAVBAR
+       ══════════════════════════════════════════ -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-maroon/95 backdrop-blur-sm transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo + Name -->
+        <a href="#" class="flex items-center gap-3 group">
+          <img src="assets/logo-sm.png" alt="Sri Amman Silks" class="h-10 w-10 rounded-full border-2 border-gold/60 group-hover:border-gold transition-colors" />
+          <span class="brand-title text-gold text-lg hidden sm:inline tracking-wide">
+            Sri Amman Silks &amp; Traders
+          </span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-1">
+          <a href="#" class="nav-link px-3 py-2 text-sm text-gold-light/80 hover:text-gold transition-colors font-medium">Home</a>
+          <a href="#about" class="nav-link px-3 py-2 text-sm text-gold-light/80 hover:text-gold transition-colors font-medium">About</a>
+          <a href="#collections" class="nav-link px-3 py-2 text-sm text-gold-light/80 hover:text-gold transition-colors font-medium">Collections</a>
+          <a href="#brands" class="nav-link px-3 py-2 text-sm text-gold-light/80 hover:text-gold transition-colors font-medium">Brands</a>
+          <a href="#contact" class="nav-link px-3 py-2 text-sm text-gold-light/80 hover:text-gold transition-colors font-medium">Contact</a>
+
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-gold" aria-label="Open menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div id="mobile-menu" class="md:hidden hidden pb-4 space-y-1">
+        <a href="#" class="block px-3 py-2 text-gold-light/80 hover:text-gold text-sm font-medium">Home</a>
+        <a href="#about" class="block px-3 py-2 text-gold-light/80 hover:text-gold text-sm font-medium">About</a>
+        <a href="#collections" class="block px-3 py-2 text-gold-light/80 hover:text-gold text-sm font-medium">Collections</a>
+        <a href="#brands" class="block px-3 py-2 text-gold-light/80 hover:text-gold text-sm font-medium">Brands</a>
+        <a href="#contact" class="block px-3 py-2 text-gold-light/80 hover:text-gold text-sm font-medium">Contact</a>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ══════════════════════════════════════════
+       HERO SECTION
+       ══════════════════════════════════════════ -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background -->
+    <img src="assets/hero-section/big-temple.avif" alt="Thanjavur Big Temple — South Indian Heritage"
+         class="absolute inset-0 w-full h-full object-cover" />
+    <div class="hero-overlay absolute inset-0"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center px-4 py-20 max-w-4xl mx-auto">
+      <img src="assets/logo.png" alt="Sri Amman Silks Logo"
+           class="mx-auto h-32 sm:h-40 md:h-48 drop-shadow-2xl mb-6" />
+
+      <h1 class="brand-title text-4xl sm:text-5xl md:text-6xl text-gold tracking-wide drop-shadow-lg">
+        Sri Amman Silks &amp; Traders
+      </h1>
+
+      <div class="mt-8 max-w-2xl mx-auto">
+        <p class="text-cream/90 text-base sm:text-lg md:text-xl leading-relaxed">
+          Trusted by families since 2010 &mdash; bringing you authentic textiles,
+          <br class="hidden sm:block" />
+          top brands &amp; honest prices from the heart of
+          <strong class="text-gold-light">Minnampalli, Salem</strong>.
+        </p>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#collections"
+           class="inline-block px-8 py-3 bg-gold text-maroon-dark font-semibold rounded-lg hover:bg-gold-light transition-colors shadow-lg text-lg">
+          Explore Collections
+        </a>
+        <a href="https://wa.me/message/KP3RYIMJA6ZCI1" target="_blank" rel="noopener noreferrer"
+           class="inline-block px-8 py-3 border-2 border-gold text-gold font-semibold rounded-lg hover:bg-gold/10 transition-colors text-lg">
+          💬 WhatsApp Us
+        </a>
+      </div>
+
+      <!-- Scroll hint -->
+      <div class="mt-16 animate-bounce">
+        <svg class="w-6 h-6 mx-auto text-gold/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       ABOUT
+       ══════════════════════════════════════════ -->
+  <section id="about" class="py-20 sm:py-28 bg-cream">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Title -->
+      <div class="text-center mb-16 fade-up">
+        <h2 class="divider-kolam font-serif text-3xl sm:text-4xl text-maroon font-bold">
+          <span class="px-4">Our Story</span>
+        </h2>
+        <p class="mt-4 text-stone-500 max-w-2xl mx-auto text-lg">
+          A decade and a half of dressing families with pride
+        </p>
+      </div>
+
+      <!-- Story text -->
+      <div class="max-w-3xl mx-auto text-center fade-up">
+        <p class="text-lg sm:text-xl leading-relaxed text-stone-700 mb-8">
+          Since our humble beginning in <strong class="text-maroon">2010</strong>, we&rsquo;ve grown from a small
+          textile shop in Minnampalli to one of Salem&rsquo;s most trusted family clothing destinations.
+          For over <strong class="text-maroon">16 years</strong>, we&rsquo;ve served our community with
+          authentic, high-quality products &mdash; because we believe every family deserves the best,
+          at prices that are fair and honest.
+        </p>
+        <p class="text-lg leading-relaxed text-stone-600">
+          At our core, we believe in <em>value, quality, and the power of brands</em>.
+          We offer a wide range of trusted names and we&rsquo;re always adding more of your favorites.
+          Welcome to a shopping experience where quality meets trust.
+        </p>
+      </div>
+
+      <!-- Feature cards -->
+      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div class="gold-shimmer bg-white rounded-xl p-6 border border-cream-border shadow-sm hover:shadow-md transition-shadow text-center fade-up">
+          <div class="text-3xl mb-3">✅</div>
+          <h3 class="font-serif text-lg font-bold text-maroon mb-2">100% Quality Products</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">Every product is tested. We source only from trusted manufacturers.</p>
+        </div>
+
+        <div class="gold-shimmer bg-white rounded-xl p-6 border border-cream-border shadow-sm hover:shadow-md transition-shadow text-center fade-up">
+          <div class="text-3xl mb-3">🤝</div>
+          <h3 class="font-serif text-lg font-bold text-maroon mb-2">Trust &amp; Service</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">We trust people, they trust us back. Quick, reliable service always.</p>
+        </div>
+
+        <div class="gold-shimmer bg-white rounded-xl p-6 border border-cream-border shadow-sm hover:shadow-md transition-shadow text-center fade-up">
+          <div class="text-3xl mb-3">🏷️</div>
+          <h3 class="font-serif text-lg font-bold text-maroon mb-2">All Top Brands</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">Wide variety of branded collections with new brands added regularly.</p>
+        </div>
+
+        <div class="gold-shimmer bg-white rounded-xl p-6 border border-cream-border shadow-sm hover:shadow-md transition-shadow text-center fade-up">
+          <div class="text-3xl mb-3">🏆</div>
+          <h3 class="font-serif text-lg font-bold text-maroon mb-2">16+ Years Strong</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">A decade and a half of surviving, growing, and serving you better.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       COLLECTIONS
+       ══════════════════════════════════════════ -->
+  <section id="collections" class="py-20 sm:py-28 bg-cream-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-up">
+        <h2 class="divider-kolam font-serif text-3xl sm:text-4xl text-maroon font-bold">
+          <span class="px-4">Our Collections</span>
+        </h2>
+        <p class="mt-4 text-stone-500 max-w-2xl mx-auto text-lg">
+          Handpicked textiles for every occasion — from festivals to everyday elegance
+        </p>
+      </div>
+
+      <!-- ── Sarees ── -->
+      <div class="mb-20 fade-up">
+        <h3 class="font-serif text-2xl text-maroon font-bold mb-2 text-center">🪷 Sarees</h3>
+        <p class="text-center text-stone-500 mb-8">Silk, cotton &amp; designer sarees for every celebration</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/sarees/saree_1.jpeg"  alt="Saree 1"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/sarees/saree_2.jpg"   alt="Saree 2"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/sarees/saree_3.webp"  alt="Saree 3"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/sarees/saree_4.jpeg"  alt="Saree 4"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/sarees/saree_5.jpeg"  alt="Saree 5"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/sarees/saree_6.jpg"   alt="Saree 6"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/sarees/saree_7.jpeg"  alt="Saree 7"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/sarees/saree_8.jpeg"  alt="Saree 8"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/sarees/saree_9.jpeg"  alt="Saree 9"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/sarees/saree_10.jpeg" alt="Saree 10" class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/sarees/saree_11.webp" alt="Saree 11" class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/sarees/saree_12.jpeg" alt="Saree 12" class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+        </div>
+      </div>
+
+      <!-- ── Chudidhars ── -->
+      <div class="mb-20 fade-up">
+        <h3 class="font-serif text-2xl text-maroon font-bold mb-2 text-center">👗 Chudidhars</h3>
+        <p class="text-center text-stone-500 mb-8">Elegant chudidhars in the latest styles and patterns</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/chudidhar/chudidhar_1.jpg"   alt="Chudidhar 1"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/chudidhar/chudidhar_2.jpg"   alt="Chudidhar 2"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/chudidhar/chudidhar_3.jpg"   alt="Chudidhar 3"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/chudidhar/chudidhar_4.jpg"   alt="Chudidhar 4"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/chudidhar/chudidhar_5.jpeg"  alt="Chudidhar 5"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/chudidhar/chudidhar_6.jpg"   alt="Chudidhar 6"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/chudidhar/chudidhar_7.jpg"   alt="Chudidhar 7"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/chudidhar/chudidhar_8.jpg"   alt="Chudidhar 8"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/chudidhar/chudidhar_9.jpeg"  alt="Chudidhar 9"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/chudidhar/chudidhar_10.jpg"  alt="Chudidhar 10" class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/chudidhar/chudidhar_11.jpg"  alt="Chudidhar 11" class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+        </div>
+      </div>
+
+      <!-- ── Shirts ── -->
+      <div class="fade-up">
+        <h3 class="font-serif text-2xl text-maroon font-bold mb-2 text-center">👔 Shirts</h3>
+        <p class="text-center text-stone-500 mb-8">Formal, casual &amp; cotton shirts for men</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/shirts/shirt_1.webp"  alt="Shirt 1"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/shirts/shirt_2.webp"  alt="Shirt 2"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/shirts/shirt_3.webp"  alt="Shirt 3"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/shirts/shirt_4.webp"  alt="Shirt 4"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/shirts/shirt_5.avif"  alt="Shirt 5"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/shirts/shirt_6.webp"  alt="Shirt 6"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/shirts/shirt_7.webp"  alt="Shirt 7"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/shirts/shirt_8.jpeg"  alt="Shirt 8"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/shirts/shirt_9.webp"  alt="Shirt 9"  class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/shirts/shirt_10.jpeg" alt="Shirt 10" class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+          <div class="product-card rounded-xl overflow-hidden bg-white shadow-sm border border-cream-border"><img src="assets/shirts/shirt_11.webp" alt="Shirt 11" class="w-full h-40 sm:h-48 object-cover" loading="lazy"/></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       BRANDS (Marquee Scroll)
+       ══════════════════════════════════════════ -->
+  <section id="brands" class="py-20 sm:py-28 bg-cream overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-up">
+        <h2 class="divider-kolam font-serif text-3xl sm:text-4xl text-maroon font-bold">
+          <span class="px-4">Brands We Carry</span>
+        </h2>
+        <p class="mt-4 text-stone-500 max-w-2xl mx-auto text-lg">
+          Trusted names you know and love — all under one roof
+        </p>
+      </div>
+
+      <!-- Static grid for all screen sizes -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 fade-up">
+        <div class="gold-shimmer bg-white rounded-xl p-4 border border-cream-border shadow-sm hover:shadow-md transition-shadow flex flex-col items-center justify-center gap-3">
+          <img src="assets/brand/ramraj.webp" alt="Ramraj" class="h-16 w-full object-contain" loading="lazy"/>
+          <span class="text-sm font-medium text-stone-600">Ramraj Vivegam</span>
+        </div>
+        <div class="gold-shimmer bg-white rounded-xl p-4 border border-cream-border shadow-sm hover:shadow-md transition-shadow flex flex-col items-center justify-center gap-3">
+          <img src="assets/brand/rixo.jpeg" alt="Rixo" class="h-16 w-full object-contain" loading="lazy"/>
+          <span class="text-sm font-medium text-stone-600">Rixo</span>
+        </div>
+        <div class="gold-shimmer bg-white rounded-xl p-4 border border-cream-border shadow-sm hover:shadow-md transition-shadow flex flex-col items-center justify-center gap-3">
+          <img src="assets/brand/poomer.png" alt="Poomer" class="h-16 w-full object-contain" loading="lazy"/>
+          <span class="text-sm font-medium text-stone-600">Poomer</span>
+        </div>
+        <div class="gold-shimmer bg-white rounded-xl p-4 border border-cream-border shadow-sm hover:shadow-md transition-shadow flex flex-col items-center justify-center gap-3">
+          <img src="assets/brand/presta.png" alt="Presta" class="h-16 w-full object-contain" loading="lazy"/>
+          <span class="text-sm font-medium text-stone-600">Presta</span>
+        </div>
+        <div class="gold-shimmer bg-white rounded-xl p-4 border border-cream-border shadow-sm hover:shadow-md transition-shadow flex flex-col items-center justify-center gap-3">
+          <img src="assets/brand/jockey.jpeg" alt="Jockey" class="h-16 w-full object-contain" loading="lazy"/>
+          <span class="text-sm font-medium text-stone-600">Jockey</span>
+        </div>
+        <div class="gold-shimmer bg-white rounded-xl p-4 border border-cream-border shadow-sm hover:shadow-md transition-shadow flex flex-col items-center justify-center gap-3">
+          <img src="assets/brand/poomex.png" alt="Poomex" class="h-16 w-full object-contain" loading="lazy"/>
+          <span class="text-sm font-medium text-stone-600">Poomex</span>
+        </div>
+      </div>
+
+      <p class="text-center text-stone-400 mt-8 text-sm italic fade-up">…and many more brands added regularly!</p>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       CONTACT
+       ══════════════════════════════════════════ -->
+  <section id="contact" class="py-20 sm:py-28 bg-maroon text-cream">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-up">
+        <h2 class="divider-kolam font-serif text-3xl sm:text-4xl text-gold font-bold">
+          <span class="px-4">Visit Us</span>
+        </h2>
+        <p class="mt-4 text-gold-light/70 max-w-2xl mx-auto text-lg">
+          We&rsquo;d love to welcome you to our shop
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <!-- Map -->
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-gold/30 fade-up">
+          <iframe title="Sri Amman Silks Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.409490208002!2d78.26811977529962!3d11.665364488542691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf29447c08517%3A0xf1d9764abcdc8b6b!2sSri%20Amman%20Silks%20and%20Traders!5e0!3m2!1sen!2sin!4v1771867478986!5m2!1sen!2sin"
+            class="w-full h-64 md:h-80" style="border:0" allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <!-- Info -->
+        <div class="space-y-8 fade-up">
+          <div>
+            <h3 class="font-serif text-xl text-gold font-bold mb-3">📍 Address</h3>
+            <a href="https://g.page/sri-amman-silks?share" target="_blank" rel="noopener noreferrer"
+               class="text-cream/80 hover:text-gold transition-colors leading-relaxed">
+              S.K. Complex, Minnampalli,<br/>Salem — 636106, Tamil Nadu
+            </a>
+          </div>
+
+          <div>
+            <h3 class="font-serif text-xl text-gold font-bold mb-3">📞 Phone</h3>
+            <a href="tel:+919942062100" class="text-cream/80 hover:text-gold transition-colors text-lg">
+              +91 99420 62100
+            </a>
+          </div>
+
+          <div>
+            <h3 class="font-serif text-xl text-gold font-bold mb-3">✉️ Email</h3>
+            <a href="mailto:sriammansilks16@gmail.com" class="text-cream/80 hover:text-gold transition-colors">
+              sriammansilks16@gmail.com
+            </a>
+          </div>
+
+          <div>
+            <h3 class="font-serif text-xl text-gold font-bold mb-4">Follow Us</h3>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://wa.me/message/KP3RYIMJA6ZCI1" target="_blank" rel="noopener noreferrer"
+                 class="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.364 0-4.546-.82-6.265-2.192l-.438-.362-3.2 1.073 1.073-3.2-.362-.438A9.955 9.955 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+                WhatsApp
+              </a>
+              <a href="https://www.instagram.com/sriammansilkstraders/" target="_blank" rel="noopener noreferrer"
+                 class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-colors text-sm font-medium">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                Instagram
+              </a>
+              <a href="https://www.facebook.com/sriamman.silks.3" target="_blank" rel="noopener noreferrer"
+                 class="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                Facebook
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+       ══════════════════════════════════════════ -->
+  <footer class="bg-maroon-dark text-cream/60 py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+          <img src="assets/logo-sm.png" alt="Sri Amman Silks" class="h-8 w-8 rounded-full"/>
+          <span class="brand-title text-gold text-lg">Sri Amman Silks &amp; Traders</span>
+        </div>
+
+        <!-- Quick links -->
+        <div class="flex flex-wrap justify-center gap-4 text-sm">
+          <a href="#" class="hover:text-gold transition-colors">Home</a>
+          <a href="#about" class="hover:text-gold transition-colors">About</a>
+          <a href="#collections" class="hover:text-gold transition-colors">Collections</a>
+          <a href="#brands" class="hover:text-gold transition-colors">Brands</a>
+          <a href="#contact" class="hover:text-gold transition-colors">Contact</a>
+        </div>
+
+        <!-- Copyright -->
+        <p class="text-sm text-center">&copy; 2026 <span class="brand-title">Sri Amman Silks &amp; Traders</span>. All rights reserved.</p>
+      </div>
+
+      <div class="mt-6 pt-6 border-t border-cream/10 text-center text-xs text-cream/40">
+        S.K. Complex, Minnampalli, Salem — 636106, Tamil Nadu &nbsp;|&nbsp; +91 99420 62100
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════════
+       JAVASCRIPT
+       ══════════════════════════════════════════ -->
+  <script>
+    // ── Navbar shadow on scroll ──
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('nav-scrolled', window.scrollY > 20);
+    });
+
+    // ── Mobile menu toggle ──
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    // Close mobile menu when a link is clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // ── Fade-in on scroll (Intersection Observer) ──
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
